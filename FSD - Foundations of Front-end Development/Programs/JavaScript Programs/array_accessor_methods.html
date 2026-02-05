@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln("Array Accessor methods<br/>")
+        let num1=[10,20,30,40];
+        let num2 =[50,60,70,80];
+        // document.write("<br/>"+num1)
+        // document.write("<br/>"+num2)
+        // let result1 = num1.concat(num2);    // result1 new array with new values
+        // let result2 = num1.concat(1,2,3,4); // result2 new array with new values
+        // let result3 = num1.concat(100);
+        // document.write("<br/> "+result1);
+        // document.write("<br/>"+result2)
+        // document.write("<br/>"+result3)
+        // document.write("<br/> "+num1);  // num1 hold old data. 
+        let num3 = num1;    // copy all values including reference ie deep copy
+        document.write("<br/> "+num1);
+        document.write("<br/> "+num3);
+            num1.push(50);
+        document.write("<br/> "+num1);
+        document.write("<br/> "+num3);
+        let num4 = num1.slice();    // shallow copy it copy only values not reference 
+        document.write("<br/> "+num1)
+        document.write("<br/> "+num4)
+        num1.push(60);
+        document.write("<br/> "+num1)
+        document.write("<br/> "+num4)
+    </script>
+</body>
+</html>

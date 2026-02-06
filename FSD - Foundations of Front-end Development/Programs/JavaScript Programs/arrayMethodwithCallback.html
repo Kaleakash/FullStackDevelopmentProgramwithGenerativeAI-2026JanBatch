@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num=[1,2,3,4,5,6,7,8,9,10];
+    // for(let i=1;i<8;i=i+2){
+    //     //document.write("<br/>"+num[i])
+    //     if(num[i]%2==0){
+    //         document.write("<br/>"+num[i])
+    //     }
+    // }
+    // document.write("<br/> display all element using for in loop")
+    // for(let index in num){
+    //     document.write("<br/> value"+num[index])
+    // }
+    // document.write("<br/> display all element using for of loop")
+
+    // for(let value of num){
+    //     document.write("<br/> value "+value)
+    // }
+    document.write("<br/> display element using callback with for each")
+    num.forEach((v,i)=>document.write("<br/> value is "+v+"index "+i))
+</script>    
+</body>
+</html>

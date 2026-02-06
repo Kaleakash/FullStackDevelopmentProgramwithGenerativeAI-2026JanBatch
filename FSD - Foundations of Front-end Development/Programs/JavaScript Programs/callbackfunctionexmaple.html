@@ -10,15 +10,15 @@
         function greet(name,callback){
                 return "Welcome "+callback(name);
         }
-        let maleInfo = function(name){
-            return "mr "+name;
-        }
-        let femaleInfo = (name)=>"Miss"+name;
-        document.write("<br/>"+greet("Raj",maleInfo))
-        document.write("<br/> "+greet("Neena",femaleInfo))
-        document.write("<br/> "+greet("Bob",function(name){
-            return "mr "+name;
-        }))
+        // let maleInfo = function(name){
+        //     return "mr "+name;
+        // }
+        // let femaleInfo = (name)=>"Miss"+name;
+        //document.write("<br/>"+greet("Raj",maleInfo))
+       // document.write("<br/> "+greet("Neena",femaleInfo))
+        // document.write("<br/> "+greet("Bob",function(name){
+        //     return "mr "+name;
+        // }))
         document.write("</br>",greet("Nancy",(name)=>"Miss"+name))
     </script>
 </body>

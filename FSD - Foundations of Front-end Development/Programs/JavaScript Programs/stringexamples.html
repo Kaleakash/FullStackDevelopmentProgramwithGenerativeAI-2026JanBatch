@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let msg1="Welcome to JS Training"; // literal style 
+        let msg2 = new String("Welcome to JS Training") // creating using new keyword 
+        let sname = "Steven";
+        let tname = "Akash"
+        document.write("<br/> "+msg1);
+        document.write("<br/> "+msg2)
+        document.write("<br/>"+msg1.toUpperCase())  // no passing parameter but return value 
+        document.write("<br/>"+msg2.toLowerCase())
+        document.write("<br/>"+msg1.length);        // property
+        document.write("<br/>"+msg1.substr(3))      // take parameter and return the value 
+        document.write("<br/>"+msg1.substr(3,4))
+        document.write("<br/>"+msg1.replace("JS","Python")) // passing parameter and return the value
+        document.write("<br/>")
+        document.writeln("Welcome to JS training "+sname+", training taking by "+tname)
+        document.write("<br/>")
+        document.write(`Welcome to JS Training ${sname}, training by ${tname}`)
+    </script>
+</body>
+</html>

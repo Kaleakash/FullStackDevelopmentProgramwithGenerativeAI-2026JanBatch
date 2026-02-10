@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add() {
+            // get the value of text field using id selector 
+            let n1Value = document.getElementById("n1").value;  // get the value 
+            let n2Value = document.getElementById("n2").value;
+            // parseInt() pre defined function help to convert string to number without decimal  
+            // parseFloat() with decimal number. 
+            let sum = parseInt(n1Value)+parseInt(n2Value)
+            document.getElementById("result").value=sum;        // set the value
+            document.getElementById("n1").value=""
+            document.getElementById("n2").value=""
+            document.getElementById("output").innerHTML=sum; // set or get value from non editable tags  
+        }
+        function sub() {
+
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Web Calculator </h2>
+    1st Number : <input type="number" id="n1"/><br/>
+    2nd Number : <input type="number" id="n2"/><br/>
+    Result :<input type="text" id="result" readonly/><br/>
+Result is <div id="output"></div>
+    <input type="button" value="Add" onclick="add()"/>
+    <input type="button" value="Sub" onclick="sub()"/>
+</body>
+</html>

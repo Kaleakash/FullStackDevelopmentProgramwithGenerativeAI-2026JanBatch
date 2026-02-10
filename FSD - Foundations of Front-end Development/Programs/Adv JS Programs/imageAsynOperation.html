@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function zoomOut() {
+            document.getElementById("imageId").style.width="200px";
+            document.getElementById("imageId").style.height="200px"
+        }
+        function zoomIn(){
+            document.getElementById("imageId").style.width="100px";
+            document.getElementById("imageId").style.height="100px"
+        } 
+        let i=0;
+        function imageToggle() {
+            setInterval(()=> {
+                if(i%2==0){
+            document.getElementById("imageInfo").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJ7J7B3rKFwwEnEg-uiEMqPnGhugJKrp4hA1bP8tWSF0NK3quGUu8S5A&s"
+
+                }else {
+            document.getElementById("imageInfo").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAe6JxDTdZ35lz6R7v67hrBDstD-7qYR3ahfY6dI0Ei0Dn8KQdf_vOrak&s"        
+                }
+                i++;
+            },2000)
+        }
+    </script>
+</head>
+<body onload="imageToggle()">
+    <img src="data:image/jpeg;base64,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"
+    width="100px" height="100px" onmouseover="zoomOut()" onmouseout="zoomIn()" id="imageId"/>
+    <hr/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF888JuHN6StlL84yOfvSMP2Cuae6LigtZrq8-VirFf7OeB_UDYEI3ymg&s"
+    width="100px" height="100px" id="imageInfo"/>
+</body>
+</html>

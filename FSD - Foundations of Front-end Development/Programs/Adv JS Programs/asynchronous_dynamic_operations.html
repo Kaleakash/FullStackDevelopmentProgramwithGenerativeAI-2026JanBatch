@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let i=0;
+        function task() {
+            //alert("event fired")
+                  // pre-defined object which provide system date and time 
+            setInterval(()=> {
+    document.getElementById("result").innerHTML="Value of i "+i
+                let dateInfo = new Date();
+    
+                    //document.getElementById("result").innerHTML=dateInfo;
+    //document.getElementById("result").innerHTML=dateInfo.getHours()+":"+dateInfo.getMinutes()+":"+dateInfo.getSeconds()
+
+    let dateAndTimeInfo = ` Date : ${dateInfo.getDate()}/${dateInfo.getMonth()+1}/${dateInfo.getFullYear()} 
+    Time ${dateInfo.getHours()}:${dateInfo.getMinutes()}:${dateInfo.getSeconds()}`;
+    document.getElementById("dateandtime").innerHTML=dateAndTimeInfo;
+
+                // dynamic styling 
+                    if(i%2==0){
+                    document.getElementById("n1").style.color="RED"
+                    document.getElementById("n1").style.fontSize="10pt"
+                    }else {
+                    document.getElementById("n1").style.color="green"
+                    document.getElementById("n1").style.fontSize="15pt"
+                    }
+
+                    i++;
+            },1000)
+
+        }
+    </script>
+</head>
+<body onload="task()">
+    <h2 id="n1">Asynchronous dynamic operation!</h2>
+    <p id="result"></p>
+    <span id="dateandtime"></span>
+</body>
+</html>

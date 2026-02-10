@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function synCode(){
+                console.log("1st statement")
+                console.log("2nd statement")
+                console.log("3rd statement")
+        }
+        var stopWork
+        function asynCode() {
+                console.log("1st statement")
+                
+                setTimeout(()=> {
+                        console.log("2nd statement working as Asynchronous")
+                },5000)
+
+                console.log("3rd statement")
+                stopWork= setInterval(()=> {
+                    console.log("4th statement working as Asynchronous")
+                },1000);
+        }
+        function stop() {
+            clearInterval(stopWork);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="syn Call" onclick="synCode()"/>
+    <input type="button" value="Asyn Call" onclick="asynCode()"/>
+    <input type="button" value="Stop" onclick="stop()"/>
+</body>
+</html>

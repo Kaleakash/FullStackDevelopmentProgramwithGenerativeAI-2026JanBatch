@@ -14,6 +14,7 @@ function addOperation() {
     }
    // document.getElementById("result").appendChild(pTag);    // <div><p>Welcome</p></div>
    document.getElementsByTagName("body")[0].appendChild(pTag)
-   document.getElementById("name").value=""
+   // clear the text field. 
+   document.getElementById("name").value=null
    document.getElementById("age").value=""
 }

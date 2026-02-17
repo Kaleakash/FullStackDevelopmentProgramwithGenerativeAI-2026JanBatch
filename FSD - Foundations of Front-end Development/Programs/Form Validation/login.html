@@ -20,9 +20,9 @@
     <h3>Login Page validation using HTML5</h3>
     <form action="home.html" method="post">
         <label>EmailId</label>
-        <input type="email" name="emailId" id="emailId2"/><br/>
+        <input type="email" name="emailId" id="emailId2" required pattern="[a-z]+@[a-z]+[.]com"/><br/>
         <label>Password</label>
-        <input type="password" name="pass" id="pass2"/><br/>
+        <input type="password" name="pass" id="pass2" required minlength="4"/><br/>
         <input type="submit" value="SignIn"/>
         <input type="reset" value="reset"/>
     </form>

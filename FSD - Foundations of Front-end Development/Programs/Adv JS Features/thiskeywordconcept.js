@@ -27,12 +27,21 @@ showData2(user1.name,user1.age)
 // call function with this keyword 
 // it invoke the functions immediately and accept the arguments one by one
 function showData3() {
-    console.log("I showData3")
+    console.log("I showData3 with call")
     console.log(this.name+" "+this.age+" "+this.id)
 }
-//showData3();
-//showData3.call(user1)
-showData3.call(user1)
+showData3.call(user1)                  // we can pass other values are argument one by one
+function showData4() {
+    console.log("I showData4 apply")
+    console.log(this.name+" "+this.age+" "+this.id)
+}
+showData4.apply(user1)              // we need to pass those value are array not individual values 
 
+function showData5() {
+    console.log("I showData5 bind")
+    console.log(this.name+" "+this.age+" "+this.id)
+}
+let result = showData5.bind(user1)              //bind function execute later on  
+result();                                   // code execute 
 
 

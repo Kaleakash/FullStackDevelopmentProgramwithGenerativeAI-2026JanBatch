@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Demonstrate Customization</title>
+ <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+ <style>
+ :root {
+ --font-xxs: 0.6rem;
+ --font-xxxl: 4rem;
+ --color-primary: #4CAF50;
+ --color-secondary: #FF5722;
+ --color-accent: #607D8B;
+ }
+ .text-xxs {
+ font-size: var(--font-xxs);
+ }
+ .text-xxxl {
+ font-size: var(--font-xxxl);
+ }
+ .text-primary {
+ color: var(--color-primary);
+ }
+ .text-secondary {
+ color: var(--color-secondary);
+ }
+ .text-accent {
+ color: var(--color-accent);
+ }
+ </style>
+</head>
+<body>
+ <div class="container mx-auto p-4">
+ <!-- Custom Font Sizes -->
+ <h1 class="text-xxxl font-bold">This is custom XXXL text</h1>
+ <p class="text-xxs mt-2">This is custom XXS text</p>
+ <!-- Custom Colors -->
+ <h2 class="text-2xl font-bold mt-5">Custom Colors</h2>
+ <p class="text-primary mt-2">This text uses the custom primary color</p>
+ <p class="text-secondary mt-2">This text uses the custom secondary color</p>
+ <p class="text-accent mt-2">This text uses the custom accent color</p>
+ </div>
+</body>
+</html>

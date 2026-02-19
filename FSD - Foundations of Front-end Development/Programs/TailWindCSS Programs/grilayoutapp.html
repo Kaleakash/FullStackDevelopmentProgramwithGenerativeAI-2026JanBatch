@@ -7,13 +7,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>    
 </head>
 <body class="bg-gray-300">
-    <nav class="flex justify-between items-center px-10 py-6 bg-gray-400 text-white">
+    <nav class="grid grid-cols-3 items-center px-10 py-6 bg-gray-400 text-white">
         <h1 class="text-lg font-bold">My App</h1>
-        <ul class="flex gap-6 flex-col flex-col">
+        
+        <p class="text-lg font-bold text-center">Welcome to My App</p>
+        
+        <ul class="grid grid-flow-col gap-3 justify-end">
             <li class="hover:text-red-200 cursor-pointer">Home</li>
             <li class="hover:text-gray-200 cursor-pointer">About</li>
             <li class="hover:text-gray-200 cursor-pointer">Contact</li>
+            <li class="hover:text-gray-200 cursor-pointer">Blog</li>
+            <li class="hover:text-gray-200 cursor-pointer">Services</li>
+            <li class="hover:text-gray-200 cursor-pointer">Support</li>
         </ul>
+
     </nav>
 
     <main class="p-10">

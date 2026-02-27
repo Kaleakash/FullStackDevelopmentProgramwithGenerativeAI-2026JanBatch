@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "pname": "Laptop",
-      "price": 65000,
-      "qty": 10,
-      "id": "b5e5"
-    },
-    {
-      "pname": "Smartphone",
-      "price": 25000,
-      "qty": 25,
-      "id": "ba1b"
-    },
-    {
       "pname": "Wireless Mouse",
       "price": 800,
       "qty": 50,

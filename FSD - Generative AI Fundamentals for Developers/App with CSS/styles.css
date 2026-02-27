@@ -1,0 +1,94 @@
+/* ===== COMMON STYLES ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #1f2937;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ===== NAVBAR (Flexbox) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background: #ae602f;
+  padding: 20px;
+}
+
+/* ===== DASHBOARD GRID ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;        /* Box Model */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== USERS PAGE (Flexbox) ===== */
+.users {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.user-card {
+  background: white;
+  padding: 15px;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* ===== REPORTS PAGE (Grid) ===== */
+.reports {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ===== SETTINGS PAGE (Box Model Focus) ===== */
+.settings-box {
+  background: white;
+  width: 300px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+/* ===== PROFILE PAGE (Flex + Box) ===== */
+.profile {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}

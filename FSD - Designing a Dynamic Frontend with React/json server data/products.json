@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "pname": "Laptop",
+      "price": 65000,
+      "qty": 10,
+      "id": "b5e5"
+    },
+    {
+      "pname": "Smartphone",
+      "price": 25000,
+      "qty": 25,
+      "id": "ba1b"
+    },
+    {
+      "pname": "Wireless Mouse",
+      "price": 800,
+      "qty": 50,
+      "id": "00d7"
+    },
+    {
+      "pname": "Keyboard",
+      "price": 1200,
+      "qty": 40,
+      "id": "9b70"
+    },
+    {
+      "pname": "Headphones",
+      "price": 2200,
+      "qty": 30,
+      "id": "48cd"
+    },
+    {
+      "pname": "Smart Watch",
+      "price": 4500,
+      "qty": 20,
+      "id": "015e"
+    },
+    {
+      "pname": "External Hard Disk",
+      "price": 5500,
+      "qty": 15,
+      "id": "1c95"
+    },
+    {
+      "pname": "Bluetooth Speaker",
+      "price": 3000,
+      "qty": 18,
+      "id": "63cf"
+    },
+    {
+      "pname": "USB Pen Drive",
+      "price": 600,
+      "qty": 60,
+      "id": "461b"
+    },
+    {
+      "pname": "Webcam",
+      "price": 2800,
+      "qty": 12,
+      "id": "afb2"
+    },
+    {
+      "id": "fa7e",
+      "pname": "Pen Drive",
+      "price": 1300,
+      "qty": 50
+    }
+  ]
+}

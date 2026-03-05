@@ -20,7 +20,7 @@ let passValue = (id,name)=> {
             <p>Name: {name} </p>
             <p>Salary: {salary} </p>
             <p>Active: {active ? "Yes" : "No"} </p>
-            <input type="button" value="JS Event" onclick="updateValue()"/>
+            <input type="button" value="JS Event with Error" onClick="updateValue()"/>
             <input type="button" value="React Event" onClick={updateValue}/>
             <input type="button" value="Change Name" onClick={()=>setName("John Doe")} />
             <input type="button" value="Pass Id and Name" onClick={()=>passValue(id,name)} />

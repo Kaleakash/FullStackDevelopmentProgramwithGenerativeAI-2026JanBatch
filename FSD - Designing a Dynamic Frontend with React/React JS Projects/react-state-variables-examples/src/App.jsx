@@ -1,3 +1,4 @@
+import ArrayStateVariables from "./ArrayStateVariables"
 import PrimitiveStateVariables from "./PrimitiveStateVarialbes"
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div>
       <h2>React State variable using useState hook</h2>
       <PrimitiveStateVariables />
+      <ArrayStateVariables/>
     </div>
   )
 }

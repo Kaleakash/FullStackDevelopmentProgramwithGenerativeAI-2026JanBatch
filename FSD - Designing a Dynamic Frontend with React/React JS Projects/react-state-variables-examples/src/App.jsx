@@ -11,8 +11,8 @@ function App() {
       <h2>React State variable using useState hook</h2>
       {/* <PrimitiveStateVariables /> */}
       {/* <ArrayStateVariables/>  */}
-      <ObjectStateVariables/> 
-      {/* <ArrayOfObjectStateVariables/> */}
+      {/* <ObjectStateVariables/>  */}
+      <ArrayOfObjectStateVariables/>
     </div>
   )
 }

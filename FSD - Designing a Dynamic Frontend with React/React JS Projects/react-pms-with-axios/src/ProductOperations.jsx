@@ -1,11 +1,27 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export const URL="http://localhost:3000/products";
 
 function ProductOperation(){
 let [products,setProducts]=useState([]);
 let [error,setError]=useState("")
 let [product,setProduct]=useState({pname:"",price:"",qty:""});
+let [msg,setMessage]=useState("");
+// 1st option without dependencies  it call first time and again whenever re-render it call again and again. 
+// useEffect(()=> 
+//     console.log("useEffect get called. ")
+// );
+
+//2nd option with empty array dependencies it call only once when component loaded..
+// useEffect(()=> {
+//      console.log("useEffect get called only once ")
+// },[])
+
+// 3rd option with dependencies as a state variable 
+useEffect(()=> {
+console.log("useEffect get called and whenever any changes in msg variable it get called.")
+loadProductsDetailsES6Style();
+},[msg])
 
 // ES5 style 
 let loadProductsDetailsES5Style = ()=> {
@@ -28,21 +44,19 @@ let loadProductsDetailsES6Style = async ()=> {
     }catch(error){
         setError(error.message);
     }
-
 }
-
 let storeProduct = async (event)=> {
     event.preventDefault();
+    setMessage("");         // reset 
     console.log(product)
     let result = await axios.post(URL,product);     // store the data in json server 
-    console.log(result);    // it return stored data with id 
+    //console.log(result);    // it return stored data with id 
+    setMessage(result.statusText);      // once record store in json file i set the message. 
     setProduct({pname:"",price:"",qty:""});
 }
     return(
         <div>
             <h2>Product Operation with Rest API using Axios</h2>
-            <input type="button" value="Load Products" 
-            onClick={loadProductsDetailsES6Style}/>
             <form onSubmit={storeProduct}>
                 <input type="text" name="pname" value={product.pname}
                 placeholder="Enter the Product Name"

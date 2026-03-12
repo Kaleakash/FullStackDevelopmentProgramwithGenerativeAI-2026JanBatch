@@ -71,6 +71,12 @@
       "pname": "tv",
       "price": "58000",
       "qty": "5"
+    },
+    {
+      "id": "befd",
+      "pname": "Laptop",
+      "price": "78000",
+      "qty": "10"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

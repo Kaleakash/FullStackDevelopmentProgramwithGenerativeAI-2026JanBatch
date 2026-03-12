@@ -49,13 +49,18 @@ let storeProduct = async (event)=> {
     event.preventDefault();
     setMessage("");         // reset 
     console.log(product)
+    try{
     let result = await axios.post(URL,product);     // store the data in json server 
     //console.log(result);    // it return stored data with id 
     setMessage(result.statusText);      // once record store in json file i set the message. 
+    }catch(error){
+        setError(error.message)
+    }
     setProduct({pname:"",price:"",qty:""});
 }
     return(
         <div>
+            <span style={{color:"red"}}>{msg}</span>
             <h2>Product Operation with Rest API using Axios</h2>
             <form onSubmit={storeProduct}>
                 <input type="text" name="pname" value={product.pname}

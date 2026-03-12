@@ -53,6 +53,13 @@
       "pname": "Pen Drive",
       "price": 1300,
       "qty": 50
+    },
+    {
+      "id": "6393",
+      "pname": "Mobile",
+      "price": "68000",
+      "qty": "10"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

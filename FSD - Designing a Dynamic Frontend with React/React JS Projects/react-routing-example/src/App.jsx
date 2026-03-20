@@ -3,6 +3,8 @@ import Login from "./Login"
 import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import Dashboard from "./Dashboard"
+import Profile from "./Profile"
+import Setting from "./Setting"
 
 
 function App() {
@@ -23,7 +25,12 @@ function App() {
       <Route path="login" element={<Login/>}/>
       <Route path="aboutUs" element={<AboutUs/>}/>
       <Route path="contactUs" element={<ContactUs/>}/>
-      <Route path="home" element={<Dashboard/>}/>
+      <Route path="home" element={<Dashboard/>}>
+
+        <Route path="profile" element={<Profile/>}/>
+        <Route path="setting" element={<Setting/>}/>
+
+      </Route>
     </Routes>
     </>
   )

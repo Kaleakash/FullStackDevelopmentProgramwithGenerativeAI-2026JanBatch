@@ -1,8 +1,7 @@
-installed these dependencies after project creation. 
-
+installed these dependencies after project creation(inside a project folder)
 
 npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
-npm install @testing-library/user-event
+npm install -D @testing-library/user-event
 
 
 Configure Vitest in vite.config.js
@@ -23,6 +22,7 @@ export default defineConfig({
 
 Setup Test Environment
 src/setupTests.js
+
 import "@testing-library/jest-dom";
 
 

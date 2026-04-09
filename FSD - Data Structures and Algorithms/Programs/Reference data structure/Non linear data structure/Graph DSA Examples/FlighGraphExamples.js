@@ -30,15 +30,15 @@ class FlightGraph {
     }
 }
 let flightGraph = new FlightGraph();
-flightGraph.addAirport("Lost Angeles");
+flightGraph.addAirport("Los Angeles");
 flightGraph.addAirport("New York");
 flightGraph.addAirport("Chicago");
 flightGraph.addAirport("Miami");
 flightGraph.addAirport("Dallas");
 flightGraph.addAirport("New York");  // trying to add duplicate airport
-flightGraph.addFlight("A", "New York");
-flightGraph.addFlight("Lost Angeles", "B");
-flightGraph.addFlight("Lost Angeles", "New York");
+flightGraph.addFlight("Los Angeles", "New York");
+flightGraph.addFlight("Los Angeles", "B");
+flightGraph.addFlight("Los Angeles", "New York");
 flightGraph.addFlight("New York", "Chicago");
 flightGraph.addFlight("Chicago", "Miami");
 flightGraph.addFlight("Miami", "Dallas");

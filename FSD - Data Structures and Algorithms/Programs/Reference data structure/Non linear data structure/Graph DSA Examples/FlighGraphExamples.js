@@ -1,10 +1,10 @@
-class Flight {
-    constructor(source, destination, price) {
-        this.source = source;
-        this.destination = destination;
-        this.price = price;
-    }
-}
+// class Flight {
+//     constructor(source, destination, price) {
+//         this.source = source;
+//         this.destination = destination;
+//         this.price = price;
+//     }
+// }
 class FlightGraph {
     constructor() {
         this.adjacencyList = {};    // of type objects property is airport and value is array of destination airports.

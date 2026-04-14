@@ -1,5 +1,5 @@
-let num = [1,3,2,4];
-//let num = [6,5,4,3]
+//let num = [1,3,2,4];
+let num = [6,5,4,3]
 console.log("Before Sorting ")
 console.log(num);
 

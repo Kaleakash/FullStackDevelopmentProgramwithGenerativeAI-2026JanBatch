@@ -1,0 +1,12 @@
+let id=100;
+let name="Raj";
+let isAdmin=true;
+let salary =50000.50;
+let address=null;
+let phoneNumber=undefined;
+console.log("ID:",id);
+console.log("Name:",name);
+console.log("Is Admin:",isAdmin);
+console.log("Salary:",salary);
+console.log("Address:",address);
+console.log("Phone Number:",phoneNumber);

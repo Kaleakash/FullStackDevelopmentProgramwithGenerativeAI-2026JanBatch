@@ -22,6 +22,20 @@ let server = http.createServer((request, response) => {
         response.writeHead(200, { 'Content-Type': 'text/html' });   
         let loginPage = fs.readFileSync('login.html');
         response.write(loginPage);
+    }
+    else if(urlObj.pathname === '/checkLoginDetails') {
+        // Handle login details check
+        let username = urlObj.query.username;
+        let password = urlObj.query.password;
+
+        // For demonstration, we will just check if the username and password are not empty
+        if (username ==="admin@gmail.com" && password === "admin123") {
+            response.writeHead(200, { 'Content-Type': 'text/html' });
+            response.write(`<h1>Login Successful</h1><p>Welcome, ${username}!</p>`);
+        } else {
+            response.writeHead(400, { 'Content-Type': 'text/html' });
+            response.write('<h1>Login Failed</h1><p>Please provide valid username and password.</p>');
+        }
     }else {
         response.writeHead(404, { 'Content-Type': 'text/html' });
         response.write('<h1>404 Not Found</h1>');

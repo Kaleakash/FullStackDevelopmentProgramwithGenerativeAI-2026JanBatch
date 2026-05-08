@@ -11,6 +11,27 @@ app.get("/",(request,response)=> {
 })
 
 
+app.get("/login",(request,response)=> {
+    response.sendFile(__dirname + "/login.html");
+})
 
+app.get("/about",(request,response)=> {
+    response.sendFile(__dirname + "/about.html");
+})
+
+app.get("/contact",(request,response)=> {
+    response.sendFile(__dirname + "/contact.html");
+})
+
+
+app.get("/checkLoginDetails",(request,response)=> {
+    let username = request.query.username;      // request object only contains query parameters for GET request
+    let password = request.query.password;
+    if(username == "admin@gmail.com" && password == "admin123"){
+        response.send("Login Successful");
+    }else{
+        response.send("Login Failed");
+    }
+})
 
 app.listen(3000,()=>console.log("Server is running on port 3000"));

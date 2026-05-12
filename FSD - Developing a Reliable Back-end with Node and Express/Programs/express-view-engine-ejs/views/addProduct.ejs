@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Product</h2>
+    <span style="color: green;"><%= message %></span>
+    <form action="/add-product-in-file" method="POST">
+        <input type="text" name="name" placeholder="Product Name">
+        <input type="number" name="price" placeholder="Product Price">
+        <button type="submit">Add Product</button>
+    </form>
+    <a href="/adminHome">Back to Home</a>
+</body>
+</html>

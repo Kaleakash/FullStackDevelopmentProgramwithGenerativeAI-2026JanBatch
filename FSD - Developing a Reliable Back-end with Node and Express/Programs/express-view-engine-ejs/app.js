@@ -79,4 +79,22 @@ app.post("/signIn",(request,response)=>{
             }
 });
 
+
+app.get("/addProduct",(request,response)=>{
+    response.render("addProduct",{message: ""});
+})
+
+app.post("/add-product-in-file",(request,response)=>{
+    let product = request.body;
+    let products = JSON.parse(fs.readFileSync("products.json").toString());
+    products.push(product);
+    fs.writeFileSync("products.json",JSON.stringify(products));
+    response.render("addProduct",{message: "Product added successfully!"});
+})
+
+app.get("/viewProducts",(request,response)=>{
+    let products = JSON.parse(fs.readFileSync("products.json").toString());
+    response.render("viewProducts",{message: "", products: products});
+})
+
 app.listen(3000,()=>console.log('Server is running on port 3000'));

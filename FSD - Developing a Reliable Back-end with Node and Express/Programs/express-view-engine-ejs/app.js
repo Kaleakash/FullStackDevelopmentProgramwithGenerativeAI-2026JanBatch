@@ -1,6 +1,12 @@
 let express = require('express');
+let fs = require('fs');
 let app = express();
 
+
+// middleware to parse urlencoded form data
+app.use(express.urlencoded({extended: true}));
+
+// set view engine to ejs
 app.set('view engine','ejs');
 
 
@@ -33,17 +39,44 @@ app.get("/register",(request,response)=>{
 
 app.post("/signUp",(request,response)=>{
     // registration logic here
-    
-    let msg = "Registration successful! Please log in.";
+    let login = request.body;
+    let msg = "";
+    let logins = JSON.parse(fs.readFileSync("logins.json").toString());
+    if(logins.length == 0){
+        logins.push(login);
+        fs.writeFileSync("logins.json",JSON.stringify(logins));
+        msg = "Registration successful!";
+    }else {
+        let isExist = logins.some(l => l.email === login.email);
+        if(isExist){
+            msg = "Email already exists! Please use a different email.";
+        }else {
+            logins.push(login);
+            fs.writeFileSync("logins.json",JSON.stringify(logins));
+            msg = "Registration successful!";
+        }
+    }
     response.render("register",{message: msg});
 })
 
 app.post("/signIn",(request,response)=>{
-    // login logic here
-
-
-    let msg = "Login successful!";
-    response.render("login",{message: msg});
+    // registration logic here
+    let login = request.body;
+    let msg = "";
+    let logins = JSON.parse(fs.readFileSync("logins.json").toString());
+            let  isPresent= logins.find(l => l.email === login.email && l.password === login.password);
+            if(isPresent){
+                if(isPresent.userType === "admin"){
+                    msg = `Welcome Admin ${isPresent.email}! Login successful!`;
+                    response.render("adminHome",{message: msg});
+                }else {
+                    msg = `Welcome Customer ${isPresent.email}! Login successful!`;
+                    response.render("customerHome",{message: msg});
+                }
+            }else {
+                msg = "Invalid email or password.";
+                response.render("login",{message: msg});
+            }
 });
 
 app.listen(3000,()=>console.log('Server is running on port 3000'));

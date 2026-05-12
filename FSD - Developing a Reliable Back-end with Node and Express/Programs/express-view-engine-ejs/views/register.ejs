@@ -6,16 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <a href="/">Home</a>|
-    <a href="about">About Us</a>|
-    <a href="contact">Contact Us</a>|
-    <a href="login">Login</a>
-    <br/>
-    <span style="color:green;"><%= message %></span>
-    <h2>Login</h2>
-    <p>Please enter your username and password to log in.</p>
-    <form action="/signIn" method="POST">
+    <h2>Register</h2>
+    <form action="/signUp" method="POST">
         <label>EmailId</label>
         <input type="email" name="email" required><br/>
         <label>Password</label>
@@ -25,8 +17,9 @@
             <option value="customer">Customer</option>
             <option value="admin">Admin</option>
         </select><br/>
-        <button type="submit">SignIn</button>
+        <button type="submit">Register</button>
     </form>
-    <p>Don't have an account? <a href="/register">Register here</a>.</p>
+    <span style="color:green;"><%= message %></span>
+    <p>Already have an account? <a href="/login">Login here</a>.</p>
 </body>
 </html>

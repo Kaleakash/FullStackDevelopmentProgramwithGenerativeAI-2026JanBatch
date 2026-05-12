@@ -22,7 +22,28 @@ app.get("/contact",(request,response)=>{
 });
 
 app.get("/login",(request,response)=>{
-    response.render('login');
+    let msg = "";
+    response.render('login',{message: msg});
 })
+
+app.get("/register",(request,response)=>{
+    let msg = "";
+    response.render('register',{message: msg});
+})
+
+app.post("/signUp",(request,response)=>{
+    // registration logic here
+    
+    let msg = "Registration successful! Please log in.";
+    response.render("register",{message: msg});
+})
+
+app.post("/signIn",(request,response)=>{
+    // login logic here
+
+
+    let msg = "Login successful!";
+    response.render("login",{message: msg});
+});
 
 app.listen(3000,()=>console.log('Server is running on port 3000'));

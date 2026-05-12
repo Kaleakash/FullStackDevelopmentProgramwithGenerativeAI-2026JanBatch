@@ -5,7 +5,9 @@ app.set('view engine','ejs');
 
 
 app.get("/",(request,response)=>{
-    response.render('index');
+    let msg = "Welcome to Express JS with View as EJS"
+    // response.render("index");
+    response.render('index',{message: msg});
 });
 
 

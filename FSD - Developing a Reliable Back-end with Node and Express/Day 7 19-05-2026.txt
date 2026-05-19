@@ -1,0 +1,16 @@
+Rest full web service 
+Get method 
+	to get all resources 
+	search particular data 
+	using 
+	query param 
+	path param 
+
+Post method 
+	to create the resource 
+Put method or Patch method 
+	it is use to update existing resource information 
+	put mainly use to update all property of existing resource 
+	patch mainly use to update partial property of existing resource 
+delete method 
+	it is use to delete the resource information using unique property

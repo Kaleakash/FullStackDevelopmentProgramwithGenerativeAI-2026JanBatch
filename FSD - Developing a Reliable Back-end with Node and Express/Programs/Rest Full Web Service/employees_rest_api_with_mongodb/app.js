@@ -92,4 +92,58 @@ app.post("/api/storeEmployee",async (request,response)=> {
     }
 })
 
+
+// update employee salary using _id property  
+// method : patch/put 
+// http://localhost:3000/api/updateEmployeeSalary 
+/* data {
+    "_id": 1,
+    "salary": 3600
+    
+  }
+    */
+app.patch("/api/updateEmployeeSalary",async (request,response)=> {
+    try{
+        let employee = request.body;
+        let id = employee._id;
+        let newSalary = employee.salary;
+
+        let result = await employeeCollection.updateOne({_id:id},{$set:{salary:newSalary}});
+        if(result.matchedCount>0){
+            if(result.modifiedCount==1){
+                response.status(200).json({"msg":`Employee salary updated successfully`});
+            }else {
+                response.status(200).json({"msg":`Salary didn't update old salary and new salary is same`});
+            }
+        }else {
+             response.status(200).json({"msg":`Employee not present with id as ${id}`});
+        }
+       
+    }catch(error){
+         response.status(404).json({"msg":error.message});
+    }
+})
+
+
+
+// delete employee information using _id property  
+// method : delete 
+// http://localhost:3000/api/deleteEmployeeUsingId/1 
+
+app.delete("/api/deleteEmployeeUsingId/:id",async (request,response)=> {
+    try{
+        let id = parseInt(request.params.id);
+        let result = await employeeCollection.deleteOne({_id:id});
+        if(result.deletedCount>0){
+             response.status(200).json({"msg":`Employee record deleted successfully with id as ${id}`});
+        }else {
+             response.status(200).json({"msg":`Employee not present with id as ${id}`});
+        }
+      
+       
+    }catch(error){
+         response.status(404).json({"msg":error.message});
+    }
+})
+
 app.listen(3000,()=>console.log("Server up with port number 3000"));

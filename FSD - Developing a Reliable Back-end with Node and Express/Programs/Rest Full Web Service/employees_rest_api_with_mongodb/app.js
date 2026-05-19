@@ -4,6 +4,8 @@ let mongodb = require("mongodb");
 let app = express();
 let URL = "mongodb://localhost:27017";
 
+app.use(express.json());        // enable post request json data 
+
 let client = new mongodb.MongoClient(URL);
 let dbName,employeeCollection;
 
@@ -47,5 +49,47 @@ app.get("/api/findEmployee/:id",async (request,response)=> {
     }
 })
 
+// search Employee using salary condition 
+// method : get 
+// http://localhost:3000/api/salaryRange/2000/4000
+app.get("/api/salaryRange/:minSalary/:maxSalary",async (request,response)=> {
+    try{
+    let minSalary = parseFloat(request.params.minSalary)
+    let maxSalary = parseFloat(request.params.maxSalary);
+
+    let employee = 
+    await employeeCollection.find({$and:[{salary:{$gt:minSalary}},{salary:{$lt:maxSalary}}]}).toArray();
+    if(employee.length!=0){
+        response.status(200).json(employee);
+    }else {
+        response.status(200).json({"message":`No Employee present with range salary as ${minSalary} and ${maxSalary}`});
+    }    
+    }catch(error){
+        response.status(404).json({"msg":error.message});
+    }
+})
+
+// post new document in employee collection 
+// method : post 
+// http://localhost:3000/api/storeEmployee 
+/* data {
+    "_id": 10,
+    "fname": "Steven",
+    "age": 28,
+    "salary": 4500,
+    "city": "Dallas",
+    "designation": "Developer",
+    "job_id": "IT_PROG"
+  }
+    */
+app.post("/api/storeEmployee",async (request,response)=> {
+    try{
+        let newEmployee = request.body;
+        let result = await employeeCollection.insertOne(newEmployee);
+         response.status(200).json({"msg":result});
+    }catch(error){
+         response.status(404).json({"msg":error.message});
+    }
+})
 
 app.listen(3000,()=>console.log("Server up with port number 3000"));

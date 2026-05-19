@@ -14,3 +14,32 @@ Put method or Patch method
 	patch mainly use to update partial property of existing resource 
 delete method 
 	it is use to delete the resource information using unique property
+
+
+Node JS with database connection 
+
+we can connect to mongo db as well as MySQL database. 
+
+
+
+Connecting Mongo Db Database using node js. 
+Node JS provided external module ie mongodb/mongoose which help to connect the 
+mongo db database. 
+
+
+
+mkdir product_rest_api_with_mongodb
+
+
+
+
+
+
+
+
+
+
+
+
+
+

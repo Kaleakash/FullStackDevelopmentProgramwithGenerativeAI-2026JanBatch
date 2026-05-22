@@ -5,6 +5,7 @@ const express = require("express");
 const { connectDB } =require("./config/db");
 
 const productRouter =require("./router/productRouter");
+const loginRouter = require("./router/loginRouter");
 
 const app = express();
 
@@ -15,7 +16,12 @@ connectDB();
 //console.log("Abc value "+abcValue)
 
 // http://localhost:5000/api/product/*
+
 app.use("/api/product", productRouter);
+
+// http://localhost:5000/api/product/*
+
+app.use("/api/login",loginRouter);
 
 const PORT = process.env.PORT || 5000;
 

@@ -8,7 +8,7 @@ const client = new MongoClient(process.env.MONGO_URL);
 //const client = new MongoClient(URL);
 
 let database;
-
+let message = "Welcome"
 const connectDB = async () => {
 
     try {

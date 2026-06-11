@@ -30,25 +30,26 @@ let signIn = async (event) => {
     setTypeOfUser('');
 }
     return(
-        <>
-        <span style={{ color: 'red' }}>{msg}</span>
-        <h3>Login Component</h3>
-        <form onSubmit={signIn}>
-            <input type='email' placeholder="Enter your email" value={email} 
-            onChange={(e) => setEmail(e.target.value)} /><br/>
-            <input type='password' placeholder="Enter your password" value={password} 
-            onChange={(e) => setPassword(e.target.value)} /><br/>
-            <select value={typeOfUser} onChange={(e) => setTypeOfUser(e.target.value)}>
-                <option value="">Select User Type</option>
-                <option value="student">Student</option>
-                <option value="admin">Admin</option>
-                <option value="instructor">Instructor</option>
-            </select>
-            <br/>
-            <button type="submit">Login</button>
-        </form>
-        <a href="/signup">Don't have an account? Sign Up</a>
-        </>
+        <div className="auth-page">
+            <section className="page-card auth-card">
+                <p className="eyebrow">Welcome back</p>
+                <h3>Login to your account</h3>
+                <p className="small-note">Use your email, password, and role to continue.</p>
+                <span className="msg-error">{msg}</span>
+                <form className="form-stack" onSubmit={signIn}>
+                    <input className="input-field" type='email' placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className="input-field" type='password' placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <select className="select-field" value={typeOfUser} onChange={(e) => setTypeOfUser(e.target.value)}>
+                        <option value="">Select User Type</option>
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
+                    <button className="button" type="submit">Login</button>
+                </form>
+                <p style={{ marginTop: '12px' }}><a className="link-text" href="/signup">Don't have an account? Sign Up</a></p>
+            </section>
+        </div>
     )
 }
 

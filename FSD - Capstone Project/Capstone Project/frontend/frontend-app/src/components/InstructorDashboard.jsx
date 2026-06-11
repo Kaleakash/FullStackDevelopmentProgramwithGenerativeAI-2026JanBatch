@@ -9,11 +9,14 @@ let logout = ()=> {
 }
 
     return(
-        <>
-        <h3>Instructor Dashboard Component</h3>
-        <p>{instructorEmail && <p>Welcome, {instructorEmail}!</p>}</p>
-        <input type="button" value="logout" onClick= {logout}/>
-        </>
+        <div className="dashboard-shell">
+            <section className="panel-card">
+                <p className="eyebrow">Instructor workspace</p>
+                <h3>Instructor Dashboard</h3>
+                <p className="small-note">{instructorEmail ? `Welcome, ${instructorEmail}!` : 'Please log in to continue.'}</p>
+                <button className="button ghost" type="button" onClick={logout}>Logout</button>
+            </section>
+        </div>
     )
 }
 

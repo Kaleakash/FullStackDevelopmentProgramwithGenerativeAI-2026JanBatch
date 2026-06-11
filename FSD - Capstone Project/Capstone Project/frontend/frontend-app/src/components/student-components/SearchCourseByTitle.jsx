@@ -22,20 +22,24 @@ let searchCourse = async () => {
 }
 
     return(
-        <>
-        <h1>Search Course By Title</h1>
-        <input type="text" placeholder="Enter course title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <input type="button" value="Search" onClick={searchCourse} />
-        {message && <p>{message}</p>}
-        {course && (
-            <div>
-                <h2>{course.title}</h2>
-                <p>{course.description}</p>
-                <p>Instructor: {course.instructor}</p>
-                <p>Duration: {course.duration}</p>
+        <div className="course-card">
+            <h3>Search Course By Title</h3>
+            <p className="small-note">Find a specific course from the catalog using its title.</p>
+            <div className="search-row">
+                <input className="input-field" type="text" placeholder="Enter course title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <button className="button" type="button" onClick={searchCourse}>Search</button>
             </div>
-        )}
-        </>
+            {message && <p className="msg-error">{message}</p>}
+            {course && (
+                <article className="result-card">
+                    <span className="badge">Found course</span>
+                    <h2>{course.title}</h2>
+                    <p>{course.description}</p>
+                    <p><strong>Instructor:</strong> {course.instructor}</p>
+                    <p><strong>Duration:</strong> {course.duration}</p>
+                </article>
+            )}
+        </div>
     )
 }
 

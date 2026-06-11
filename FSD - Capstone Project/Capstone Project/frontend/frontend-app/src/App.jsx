@@ -10,11 +10,13 @@ import ViewAllCourseByStudent from './components/student-components/ViewAllCours
 import SearchCourseByTitle from './components/student-components/SearchCourseByTitle'
 
 function App() {
-  
-  return(
-    <>
-    <h2>Capstone Project App!</h2>
-    <Routes>
+  return (
+    <div className="app-shell">
+      <header className="page-intro">
+        <h1>Capstone Learning Hub</h1>
+        <p>Manage student, instructor, and admin workflows with a cleaner, more polished interface.</p>
+      </header>
+      <Routes>
       <Route path='/' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
       
@@ -27,7 +29,7 @@ function App() {
       <Route path='/admin-dashboard' element={<AdminDashboard />} />
       <Route path='/login' element={<Login />} />
     </Routes>
-    </>
+    </div>
   )
 
 }

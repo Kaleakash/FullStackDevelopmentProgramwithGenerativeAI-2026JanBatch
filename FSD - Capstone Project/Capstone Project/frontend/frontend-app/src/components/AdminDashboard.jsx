@@ -8,10 +8,14 @@ let logout = ()=> {
 }
 
     return(
-        <>
-        <h3>Admin Dashboard Component</h3>
-        <input type="button" value="logout" onClick= {logout}/>
-        </>
+        <div className="dashboard-shell">
+            <section className="panel-card">
+                <p className="eyebrow">Admin workspace</p>
+                <h3>Admin Dashboard</h3>
+                <p className="small-note">Monitor and manage the learning platform from one central place.</p>
+                <button className="button ghost" type="button" onClick={logout}>Logout</button>
+            </section>
+        </div>
     )
 }
 

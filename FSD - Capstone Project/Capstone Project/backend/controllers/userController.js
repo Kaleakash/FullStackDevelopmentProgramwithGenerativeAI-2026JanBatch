@@ -6,7 +6,8 @@ const register = async (req, res) => {
         const newUser = await userService.registerUser(email, password,typeOfUser);
         res.status(201).json({
             success: true,
-            data: newUser
+            data: newUser,
+            message: "User Registered Successfully"
         });
     } catch (error) {
 

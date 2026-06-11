@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     typeOfUser: {
         type: String,
-        enum: ["admin", "user"],
+        enum: ["admin", "student", "instructor"],
         required: true
     }
 });

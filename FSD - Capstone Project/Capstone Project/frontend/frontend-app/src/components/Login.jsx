@@ -7,16 +7,21 @@ let [password, setPassword] = useState('');
 let [typeOfUser, setTypeOfUser] = useState('');
 let [msg, setMsg] = useState('');
 let navigate = useNavigate();
+
 let signIn = async (event) => {
     event.preventDefault();
     let login = {email, password, typeOfUser};
-    console.log(login);
+    //console.log(login);
     let result = await checkLoginDetails(login);
     console.log(result);
     if(result.message==="Logged in as admin"){
         navigate('/admin-dashboard');
-    }else if(result.message==="Logged in as user"){
-        navigate('/user-dashboard');
+    }else if(result.message==="Logged in as student"){
+        sessionStorage.setItem("userEmail", email);
+        navigate('/student-dashboard');
+    }else if(result.message==="Logged in as instructor"){
+        sessionStorage.setItem("instructorEmail", email);
+        navigate('/instructor-dashboard');  
     }else {
         setMsg("Invalid credentials. Please try again.");
     }
@@ -35,8 +40,9 @@ let signIn = async (event) => {
             onChange={(e) => setPassword(e.target.value)} /><br/>
             <select value={typeOfUser} onChange={(e) => setTypeOfUser(e.target.value)}>
                 <option value="">Select User Type</option>
-                <option value="user">User</option>
+                <option value="student">Student</option>
                 <option value="admin">Admin</option>
+                <option value="instructor">Instructor</option>
             </select>
             <br/>
             <button type="submit">Login</button>
